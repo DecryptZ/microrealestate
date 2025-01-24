@@ -16,5 +16,5 @@ RUN mkdir -p mre && cd mre && \
 RUN curl -L https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m) -o /usr/local/bin/docker-compose && \
     chmod +x /usr/local/bin/docker-compose
 
-# Start the application with docker-compose
-CMD cd mre && AP
+# Run docker-compose with the custom domain and protocol environment variables
+CMD APP_DOMAIN=https://microrealestate-xpcf.onrender.com APP_PROTOCOL=https docker-compose --profile local up
